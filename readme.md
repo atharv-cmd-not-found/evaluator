@@ -1,7 +1,4 @@
 
----
-
-### `README.md`
 
 ```markdown
 # AI Answer Evaluator (Rubric & NLI Based)
