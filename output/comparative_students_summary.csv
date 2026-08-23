@@ -1,0 +1,12 @@
+student_id,evaluator_model,evaluator_type,marks_awarded,max_total_marks,percentage
+student1,cross-encoder/nli-deberta-v3-large,CROSS_ENCODER,9.75,20.0,48.75%
+student1,cross-encoder/nli-deberta-v3-base,CROSS_ENCODER,8.0,20.0,40.00%
+student1,cross-encoder/nli-roberta-base,CROSS_ENCODER,6.07,20.0,30.35%
+student1,cross-encoder/nli-distilroberta-base,CROSS_ENCODER,6.75,20.0,33.75%
+student1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,17.68,20.0,88.40%
+student1,cross-encoder/stsb-roberta-base,CROSS_ENCODER,16.68,20.0,83.40%
+student1,cross-encoder/stsb-distilroberta-base,CROSS_ENCODER,14.75,20.0,73.75%
+student1,BAAI/bge-reranker-base,CROSS_ENCODER,15.09,20.0,75.45%
+student1,cross-encoder/ms-marco-MiniLM-L-6-v2,CROSS_ENCODER,20.0,20.0,100.00%
+student1,qwen2.5:7b,LLM,20.0,20.0,100.00%
+student1,phi3.5:latest,LLM,16.7,20.0,83.50%

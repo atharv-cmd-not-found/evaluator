@@ -1,0 +1,133 @@
+student_id,evaluator_model,evaluator_type,question_id,criterion_id,criterion_type,max_marks,marks_awarded,status,satisfied,diagnostics,entailment_score,contradiction_score,similarity_score
+student1,cross-encoder/nli-deberta-v3-large,CROSS_ENCODER,Q1,q1_definition,semantic,2.0,2.0,Fully Satisfied,True,Entail: 1.00 | Contra: 0.00 | Neut: 0.00,0.9985,0.0,
+student1,cross-encoder/nli-deberta-v3-large,CROSS_ENCODER,Q1,q1_types,minimum_count,3.0,3.0,Fully Satisfied (Matched 5/3 required),True,"Matched 5/3 options: ['single inheritance', 'multiple inheritance', 'multilevel inheritance', 'hierarchical inheritance', 'hybrid inheritance']",,,
+student1,cross-encoder/nli-deberta-v3-large,CROSS_ENCODER,Q2,q2_definition,semantic,1.0,1.0,Fully Satisfied,True,Entail: 1.00 | Contra: 0.00 | Neut: 0.00,0.9982,0.0,
+student1,cross-encoder/nli-deberta-v3-large,CROSS_ENCODER,Q2,q2_encapsulation,semantic,1.0,1.0,Fully Satisfied,True,Entail: 0.99 | Contra: 0.00 | Neut: 0.01,0.9907,0.0001,
+student1,cross-encoder/nli-deberta-v3-large,CROSS_ENCODER,Q2,q2_abstraction,semantic,1.0,1.0,Fully Satisfied,True,Entail: 1.00 | Contra: 0.00 | Neut: 0.00,0.997,0.0,
+student1,cross-encoder/nli-deberta-v3-large,CROSS_ENCODER,Q2,q2_inheritance,semantic,1.0,0.0,Missing / Not Mentioned,False,Entail: 0.01 | Contra: 0.00 | Neut: 0.99,0.0104,0.0034,
+student1,cross-encoder/nli-deberta-v3-large,CROSS_ENCODER,Q2,q2_polymorphism,semantic,1.0,0.0,Missing / Not Mentioned,False,Entail: 0.10 | Contra: 0.06 | Neut: 0.84,0.1038,0.0604,
+student1,cross-encoder/nli-deberta-v3-large,CROSS_ENCODER,Q3,q3_definition,semantic,1.0,0.0,Missing / Not Mentioned,False,Entail: 0.29 | Contra: 0.00 | Neut: 0.71,0.288,0.0012,
+student1,cross-encoder/nli-deberta-v3-large,CROSS_ENCODER,Q3,q3_compile_time,semantic,2.0,0.0,Missing / Not Mentioned,False,Entail: 0.01 | Contra: 0.02 | Neut: 0.98,0.006,0.0168,
+student1,cross-encoder/nli-deberta-v3-large,CROSS_ENCODER,Q3,q3_runtime,semantic,2.0,1.75,Partially Satisfied,True,Entail: 0.83 | Contra: 0.03 | Neut: 0.14,0.8338,0.0312,
+student1,cross-encoder/nli-deberta-v3-large,CROSS_ENCODER,Q4,q4_class,semantic,2.5,0.0,Missing / Not Mentioned,False,Entail: 0.15 | Contra: 0.00 | Neut: 0.85,0.1452,0.0003,
+student1,cross-encoder/nli-deberta-v3-large,CROSS_ENCODER,Q4,q4_object,semantic,2.5,0.0,Missing / Not Mentioned,False,Entail: 0.01 | Contra: 0.00 | Neut: 0.99,0.0083,0.0,
+student1,cross-encoder/nli-deberta-v3-base,CROSS_ENCODER,Q1,q1_definition,semantic,2.0,2.0,Fully Satisfied,True,Entail: 1.00 | Contra: 0.00 | Neut: 0.00,0.9976,0.0001,
+student1,cross-encoder/nli-deberta-v3-base,CROSS_ENCODER,Q1,q1_types,minimum_count,3.0,3.0,Fully Satisfied (Matched 5/3 required),True,"Matched 5/3 options: ['single inheritance', 'multiple inheritance', 'multilevel inheritance', 'hierarchical inheritance', 'hybrid inheritance']",,,
+student1,cross-encoder/nli-deberta-v3-base,CROSS_ENCODER,Q2,q2_definition,semantic,1.0,1.0,Fully Satisfied,True,Entail: 1.00 | Contra: 0.00 | Neut: 0.00,0.9973,0.0002,
+student1,cross-encoder/nli-deberta-v3-base,CROSS_ENCODER,Q2,q2_encapsulation,semantic,1.0,1.0,Fully Satisfied,True,Entail: 0.97 | Contra: 0.00 | Neut: 0.03,0.9731,0.0,
+student1,cross-encoder/nli-deberta-v3-base,CROSS_ENCODER,Q2,q2_abstraction,semantic,1.0,1.0,Fully Satisfied,True,Entail: 0.99 | Contra: 0.00 | Neut: 0.01,0.9909,0.0001,
+student1,cross-encoder/nli-deberta-v3-base,CROSS_ENCODER,Q2,q2_inheritance,semantic,1.0,0.0,Missing / Not Mentioned,False,Entail: 0.01 | Contra: 0.00 | Neut: 0.99,0.0056,0.0,
+student1,cross-encoder/nli-deberta-v3-base,CROSS_ENCODER,Q2,q2_polymorphism,semantic,1.0,0.0,Missing / Not Mentioned,False,Entail: 0.01 | Contra: 0.00 | Neut: 0.99,0.005,0.0001,
+student1,cross-encoder/nli-deberta-v3-base,CROSS_ENCODER,Q3,q3_definition,semantic,1.0,0.0,Missing / Not Mentioned,False,Entail: 0.05 | Contra: 0.43 | Neut: 0.53,0.0466,0.4281,
+student1,cross-encoder/nli-deberta-v3-base,CROSS_ENCODER,Q3,q3_compile_time,semantic,2.0,0.0,Missing / Not Mentioned,False,Entail: 0.03 | Contra: 0.02 | Neut: 0.95,0.0272,0.0208,
+student1,cross-encoder/nli-deberta-v3-base,CROSS_ENCODER,Q3,q3_runtime,semantic,2.0,0.0,Missing / Not Mentioned,False,Entail: 0.08 | Contra: 0.00 | Neut: 0.92,0.0825,0.0012,
+student1,cross-encoder/nli-deberta-v3-base,CROSS_ENCODER,Q4,q4_class,semantic,2.5,0.0,Missing / Not Mentioned,False,Entail: 0.03 | Contra: 0.04 | Neut: 0.92,0.0334,0.0443,
+student1,cross-encoder/nli-deberta-v3-base,CROSS_ENCODER,Q4,q4_object,semantic,2.5,0.0,Contradiction / Incorrect Statement,False,Entail: 0.02 | Contra: 0.90 | Neut: 0.08,0.0181,0.898,
+student1,cross-encoder/nli-roberta-base,CROSS_ENCODER,Q1,q1_definition,semantic,2.0,0.0,Missing / Not Mentioned,False,Entail: 0.51 | Contra: 0.09 | Neut: 0.40,0.507,0.0938,
+student1,cross-encoder/nli-roberta-base,CROSS_ENCODER,Q1,q1_types,minimum_count,3.0,3.0,Fully Satisfied (Matched 5/3 required),True,"Matched 5/3 options: ['single inheritance', 'multiple inheritance', 'multilevel inheritance', 'hierarchical inheritance', 'hybrid inheritance']",,,
+student1,cross-encoder/nli-roberta-base,CROSS_ENCODER,Q2,q2_definition,semantic,1.0,1.0,Fully Satisfied,True,Entail: 0.99 | Contra: 0.00 | Neut: 0.01,0.9855,0.0022,
+student1,cross-encoder/nli-roberta-base,CROSS_ENCODER,Q2,q2_encapsulation,semantic,1.0,0.74,Partially Satisfied,True,Entail: 0.75 | Contra: 0.02 | Neut: 0.23,0.7529,0.0189,
+student1,cross-encoder/nli-roberta-base,CROSS_ENCODER,Q2,q2_abstraction,semantic,1.0,0.71,Partially Satisfied,True,Entail: 0.73 | Contra: 0.08 | Neut: 0.19,0.7327,0.076,
+student1,cross-encoder/nli-roberta-base,CROSS_ENCODER,Q2,q2_inheritance,semantic,1.0,0.0,Missing / Not Mentioned,False,Entail: 0.07 | Contra: 0.13 | Neut: 0.81,0.0671,0.1279,
+student1,cross-encoder/nli-roberta-base,CROSS_ENCODER,Q2,q2_polymorphism,semantic,1.0,0.0,Missing / Not Mentioned,False,Entail: 0.17 | Contra: 0.22 | Neut: 0.60,0.1725,0.2228,
+student1,cross-encoder/nli-roberta-base,CROSS_ENCODER,Q3,q3_definition,semantic,1.0,0.62,Partially Satisfied,True,Entail: 0.68 | Contra: 0.08 | Neut: 0.25,0.6768,0.0776,
+student1,cross-encoder/nli-roberta-base,CROSS_ENCODER,Q3,q3_compile_time,semantic,2.0,0.0,Missing / Not Mentioned,False,Entail: 0.19 | Contra: 0.38 | Neut: 0.43,0.1903,0.3823,
+student1,cross-encoder/nli-roberta-base,CROSS_ENCODER,Q3,q3_runtime,semantic,2.0,0.0,Missing / Not Mentioned,False,Entail: 0.32 | Contra: 0.10 | Neut: 0.58,0.3209,0.095,
+student1,cross-encoder/nli-roberta-base,CROSS_ENCODER,Q4,q4_class,semantic,2.5,0.0,Missing / Not Mentioned,False,Entail: 0.24 | Contra: 0.04 | Neut: 0.72,0.2414,0.0416,
+student1,cross-encoder/nli-roberta-base,CROSS_ENCODER,Q4,q4_object,semantic,2.5,0.0,Missing / Not Mentioned,False,Entail: 0.58 | Contra: 0.03 | Neut: 0.39,0.5778,0.0329,
+student1,cross-encoder/nli-distilroberta-base,CROSS_ENCODER,Q1,q1_definition,semantic,2.0,1.61,Partially Satisfied,True,Entail: 0.79 | Contra: 0.15 | Neut: 0.06,0.7906,0.1505,
+student1,cross-encoder/nli-distilroberta-base,CROSS_ENCODER,Q1,q1_types,minimum_count,3.0,3.0,Fully Satisfied (Matched 5/3 required),True,"Matched 5/3 options: ['single inheritance', 'multiple inheritance', 'multilevel inheritance', 'hierarchical inheritance', 'hybrid inheritance']",,,
+student1,cross-encoder/nli-distilroberta-base,CROSS_ENCODER,Q2,q2_definition,semantic,1.0,1.0,Fully Satisfied,True,Entail: 0.93 | Contra: 0.03 | Neut: 0.03,0.9335,0.0325,
+student1,cross-encoder/nli-distilroberta-base,CROSS_ENCODER,Q2,q2_encapsulation,semantic,1.0,0.0,Missing / Not Mentioned,False,Entail: 0.16 | Contra: 0.24 | Neut: 0.60,0.1615,0.2361,
+student1,cross-encoder/nli-distilroberta-base,CROSS_ENCODER,Q2,q2_abstraction,semantic,1.0,0.0,Missing / Not Mentioned,False,Entail: 0.25 | Contra: 0.09 | Neut: 0.67,0.2458,0.0888,
+student1,cross-encoder/nli-distilroberta-base,CROSS_ENCODER,Q2,q2_inheritance,semantic,1.0,0.0,Missing / Not Mentioned,False,Entail: 0.20 | Contra: 0.06 | Neut: 0.74,0.2005,0.0574,
+student1,cross-encoder/nli-distilroberta-base,CROSS_ENCODER,Q2,q2_polymorphism,semantic,1.0,0.0,Missing / Not Mentioned,False,Entail: 0.22 | Contra: 0.16 | Neut: 0.62,0.2245,0.1573,
+student1,cross-encoder/nli-distilroberta-base,CROSS_ENCODER,Q3,q3_definition,semantic,1.0,0.0,Missing / Not Mentioned,False,Entail: 0.09 | Contra: 0.12 | Neut: 0.79,0.0893,0.1216,
+student1,cross-encoder/nli-distilroberta-base,CROSS_ENCODER,Q3,q3_compile_time,semantic,2.0,0.0,Missing / Not Mentioned,False,Entail: 0.48 | Contra: 0.14 | Neut: 0.38,0.4781,0.1398,
+student1,cross-encoder/nli-distilroberta-base,CROSS_ENCODER,Q3,q3_runtime,semantic,2.0,1.14,Partially Satisfied,True,Entail: 0.64 | Contra: 0.10 | Neut: 0.26,0.6437,0.0982,
+student1,cross-encoder/nli-distilroberta-base,CROSS_ENCODER,Q4,q4_class,semantic,2.5,0.0,Missing / Not Mentioned,False,Entail: 0.23 | Contra: 0.16 | Neut: 0.61,0.2259,0.1642,
+student1,cross-encoder/nli-distilroberta-base,CROSS_ENCODER,Q4,q4_object,semantic,2.5,0.0,Contradiction / Incorrect Statement,False,Entail: 0.09 | Contra: 0.69 | Neut: 0.22,0.0914,0.6902,
+student1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q1,q1_definition,semantic,2.0,2.0,Fully Satisfied,True,STS Similarity: 0.936,,,0.9365
+student1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q1,q1_types,minimum_count,3.0,3.0,Fully Satisfied (Matched 5/3 required),True,"Matched 5/3 options: ['single inheritance', 'multiple inheritance', 'multilevel inheritance', 'hierarchical inheritance', 'hybrid inheritance']",,,
+student1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q2,q2_definition,semantic,1.0,1.0,Fully Satisfied,True,STS Similarity: 0.845,,,0.8445
+student1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q2,q2_encapsulation,semantic,1.0,0.79,Partially Satisfied,True,STS Similarity: 0.786,,,0.786
+student1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q2,q2_abstraction,semantic,1.0,1.0,Fully Satisfied,True,STS Similarity: 0.889,,,0.8894
+student1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q2,q2_inheritance,semantic,1.0,1.0,Fully Satisfied,True,STS Similarity: 0.819,,,0.8192
+student1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q2,q2_polymorphism,semantic,1.0,0.53,Partially Satisfied,False,STS Similarity: 0.528,,,0.5276
+student1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q3,q3_definition,semantic,1.0,0.73,Partially Satisfied,True,STS Similarity: 0.733,,,0.7333
+student1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q3,q3_compile_time,semantic,2.0,1.5,Partially Satisfied,True,STS Similarity: 0.749,,,0.7488
+student1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q3,q3_runtime,semantic,2.0,2.0,Fully Satisfied,True,STS Similarity: 0.814,,,0.8144
+student1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q4,q4_class,semantic,2.5,2.5,Fully Satisfied,True,STS Similarity: 0.905,,,0.9054
+student1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q4,q4_object,semantic,2.5,1.63,Partially Satisfied,True,STS Similarity: 0.651,,,0.6508
+student1,cross-encoder/stsb-roberta-base,CROSS_ENCODER,Q1,q1_definition,semantic,2.0,2.0,Fully Satisfied,True,STS Similarity: 0.834,,,0.8341
+student1,cross-encoder/stsb-roberta-base,CROSS_ENCODER,Q1,q1_types,minimum_count,3.0,3.0,Fully Satisfied (Matched 5/3 required),True,"Matched 5/3 options: ['single inheritance', 'multiple inheritance', 'multilevel inheritance', 'hierarchical inheritance', 'hybrid inheritance']",,,
+student1,cross-encoder/stsb-roberta-base,CROSS_ENCODER,Q2,q2_definition,semantic,1.0,1.0,Fully Satisfied,True,STS Similarity: 0.882,,,0.8821
+student1,cross-encoder/stsb-roberta-base,CROSS_ENCODER,Q2,q2_encapsulation,semantic,1.0,0.79,Partially Satisfied,True,STS Similarity: 0.794,,,0.794
+student1,cross-encoder/stsb-roberta-base,CROSS_ENCODER,Q2,q2_abstraction,semantic,1.0,1.0,Fully Satisfied,True,STS Similarity: 0.861,,,0.8614
+student1,cross-encoder/stsb-roberta-base,CROSS_ENCODER,Q2,q2_inheritance,semantic,1.0,0.79,Partially Satisfied,True,STS Similarity: 0.793,,,0.7929
+student1,cross-encoder/stsb-roberta-base,CROSS_ENCODER,Q2,q2_polymorphism,semantic,1.0,0.54,Partially Satisfied,False,STS Similarity: 0.544,,,0.5437
+student1,cross-encoder/stsb-roberta-base,CROSS_ENCODER,Q3,q3_definition,semantic,1.0,0.7,Partially Satisfied,True,STS Similarity: 0.704,,,0.704
+student1,cross-encoder/stsb-roberta-base,CROSS_ENCODER,Q3,q3_compile_time,semantic,2.0,1.35,Partially Satisfied,True,STS Similarity: 0.674,,,0.6745
+student1,cross-encoder/stsb-roberta-base,CROSS_ENCODER,Q3,q3_runtime,semantic,2.0,1.59,Partially Satisfied,True,STS Similarity: 0.793,,,0.7934
+student1,cross-encoder/stsb-roberta-base,CROSS_ENCODER,Q4,q4_class,semantic,2.5,2.5,Fully Satisfied,True,STS Similarity: 0.890,,,0.8902
+student1,cross-encoder/stsb-roberta-base,CROSS_ENCODER,Q4,q4_object,semantic,2.5,1.42,Partially Satisfied,False,STS Similarity: 0.570,,,0.5697
+student1,cross-encoder/stsb-distilroberta-base,CROSS_ENCODER,Q1,q1_definition,semantic,2.0,2.0,Fully Satisfied,True,STS Similarity: 0.858,,,0.8576
+student1,cross-encoder/stsb-distilroberta-base,CROSS_ENCODER,Q1,q1_types,minimum_count,3.0,3.0,Fully Satisfied (Matched 5/3 required),True,"Matched 5/3 options: ['single inheritance', 'multiple inheritance', 'multilevel inheritance', 'hierarchical inheritance', 'hybrid inheritance']",,,
+student1,cross-encoder/stsb-distilroberta-base,CROSS_ENCODER,Q2,q2_definition,semantic,1.0,1.0,Fully Satisfied,True,STS Similarity: 0.815,,,0.8148
+student1,cross-encoder/stsb-distilroberta-base,CROSS_ENCODER,Q2,q2_encapsulation,semantic,1.0,0.7,Partially Satisfied,True,STS Similarity: 0.700,,,0.7002
+student1,cross-encoder/stsb-distilroberta-base,CROSS_ENCODER,Q2,q2_abstraction,semantic,1.0,1.0,Fully Satisfied,True,STS Similarity: 0.829,,,0.829
+student1,cross-encoder/stsb-distilroberta-base,CROSS_ENCODER,Q2,q2_inheritance,semantic,1.0,0.78,Partially Satisfied,True,STS Similarity: 0.783,,,0.7828
+student1,cross-encoder/stsb-distilroberta-base,CROSS_ENCODER,Q2,q2_polymorphism,semantic,1.0,0.55,Partially Satisfied,False,STS Similarity: 0.548,,,0.5481
+student1,cross-encoder/stsb-distilroberta-base,CROSS_ENCODER,Q3,q3_definition,semantic,1.0,0.54,Partially Satisfied,False,STS Similarity: 0.541,,,0.5407
+student1,cross-encoder/stsb-distilroberta-base,CROSS_ENCODER,Q3,q3_compile_time,semantic,2.0,1.32,Partially Satisfied,True,STS Similarity: 0.659,,,0.6588
+student1,cross-encoder/stsb-distilroberta-base,CROSS_ENCODER,Q3,q3_runtime,semantic,2.0,1.36,Partially Satisfied,True,STS Similarity: 0.678,,,0.6778
+student1,cross-encoder/stsb-distilroberta-base,CROSS_ENCODER,Q4,q4_class,semantic,2.5,2.5,Fully Satisfied,True,STS Similarity: 0.852,,,0.8515
+student1,cross-encoder/stsb-distilroberta-base,CROSS_ENCODER,Q4,q4_object,semantic,2.5,0.0,Missing / Low Similarity,False,STS Similarity: 0.495,,,0.4954
+student1,BAAI/bge-reranker-base,CROSS_ENCODER,Q1,q1_definition,semantic,2.0,1.46,Partially Satisfied,True,Sigmoid: 0.731 (Logit: 1.00),,,0.7305
+student1,BAAI/bge-reranker-base,CROSS_ENCODER,Q1,q1_types,minimum_count,3.0,3.0,Fully Satisfied (Matched 5/3 required),True,"Matched 5/3 options: ['single inheritance', 'multiple inheritance', 'multilevel inheritance', 'hierarchical inheritance', 'hybrid inheritance']",,,
+student1,BAAI/bge-reranker-base,CROSS_ENCODER,Q2,q2_definition,semantic,1.0,0.73,Partially Satisfied,True,Sigmoid: 0.731 (Logit: 1.00),,,0.731
+student1,BAAI/bge-reranker-base,CROSS_ENCODER,Q2,q2_encapsulation,semantic,1.0,0.73,Partially Satisfied,True,Sigmoid: 0.729 (Logit: 0.99),,,0.7294
+student1,BAAI/bge-reranker-base,CROSS_ENCODER,Q2,q2_abstraction,semantic,1.0,0.72,Partially Satisfied,True,Sigmoid: 0.722 (Logit: 0.95),,,0.7216
+student1,BAAI/bge-reranker-base,CROSS_ENCODER,Q2,q2_inheritance,semantic,1.0,0.73,Partially Satisfied,True,Sigmoid: 0.729 (Logit: 0.99),,,0.7285
+student1,BAAI/bge-reranker-base,CROSS_ENCODER,Q2,q2_polymorphism,semantic,1.0,0.71,Partially Satisfied,True,Sigmoid: 0.711 (Logit: 0.90),,,0.7108
+student1,BAAI/bge-reranker-base,CROSS_ENCODER,Q3,q3_definition,semantic,1.0,0.72,Partially Satisfied,True,Sigmoid: 0.725 (Logit: 0.97),,,0.725
+student1,BAAI/bge-reranker-base,CROSS_ENCODER,Q3,q3_compile_time,semantic,2.0,1.38,Partially Satisfied,True,Sigmoid: 0.689 (Logit: 0.79),,,0.6885
+student1,BAAI/bge-reranker-base,CROSS_ENCODER,Q3,q3_runtime,semantic,2.0,1.46,Partially Satisfied,True,Sigmoid: 0.731 (Logit: 1.00),,,0.7309
+student1,BAAI/bge-reranker-base,CROSS_ENCODER,Q4,q4_class,semantic,2.5,1.82,Partially Satisfied,True,Sigmoid: 0.730 (Logit: 0.99),,,0.73
+student1,BAAI/bge-reranker-base,CROSS_ENCODER,Q4,q4_object,semantic,2.5,1.63,Partially Satisfied,True,Sigmoid: 0.654 (Logit: 0.64),,,0.6537
+student1,cross-encoder/ms-marco-MiniLM-L-6-v2,CROSS_ENCODER,Q1,q1_definition,semantic,2.0,2.0,Fully Satisfied,True,Sigmoid: 0.999 (Logit: 7.42),,,0.9994
+student1,cross-encoder/ms-marco-MiniLM-L-6-v2,CROSS_ENCODER,Q1,q1_types,minimum_count,3.0,3.0,Fully Satisfied (Matched 5/3 required),True,"Matched 5/3 options: ['single inheritance', 'multiple inheritance', 'multilevel inheritance', 'hierarchical inheritance', 'hybrid inheritance']",,,
+student1,cross-encoder/ms-marco-MiniLM-L-6-v2,CROSS_ENCODER,Q2,q2_definition,semantic,1.0,1.0,Fully Satisfied,True,Sigmoid: 1.000 (Logit: 8.47),,,0.9998
+student1,cross-encoder/ms-marco-MiniLM-L-6-v2,CROSS_ENCODER,Q2,q2_encapsulation,semantic,1.0,1.0,Fully Satisfied,True,Sigmoid: 0.997 (Logit: 5.94),,,0.9974
+student1,cross-encoder/ms-marco-MiniLM-L-6-v2,CROSS_ENCODER,Q2,q2_abstraction,semantic,1.0,1.0,Fully Satisfied,True,Sigmoid: 1.000 (Logit: 7.76),,,0.9996
+student1,cross-encoder/ms-marco-MiniLM-L-6-v2,CROSS_ENCODER,Q2,q2_inheritance,semantic,1.0,1.0,Fully Satisfied,True,Sigmoid: 1.000 (Logit: 9.80),,,0.9999
+student1,cross-encoder/ms-marco-MiniLM-L-6-v2,CROSS_ENCODER,Q2,q2_polymorphism,semantic,1.0,1.0,Fully Satisfied,True,Sigmoid: 0.944 (Logit: 2.83),,,0.9442
+student1,cross-encoder/ms-marco-MiniLM-L-6-v2,CROSS_ENCODER,Q3,q3_definition,semantic,1.0,1.0,Fully Satisfied,True,Sigmoid: 0.994 (Logit: 5.17),,,0.9944
+student1,cross-encoder/ms-marco-MiniLM-L-6-v2,CROSS_ENCODER,Q3,q3_compile_time,semantic,2.0,2.0,Fully Satisfied,True,Sigmoid: 0.995 (Logit: 5.38),,,0.9954
+student1,cross-encoder/ms-marco-MiniLM-L-6-v2,CROSS_ENCODER,Q3,q3_runtime,semantic,2.0,2.0,Fully Satisfied,True,Sigmoid: 0.998 (Logit: 6.23),,,0.998
+student1,cross-encoder/ms-marco-MiniLM-L-6-v2,CROSS_ENCODER,Q4,q4_class,semantic,2.5,2.5,Fully Satisfied,True,Sigmoid: 1.000 (Logit: 8.66),,,0.9998
+student1,cross-encoder/ms-marco-MiniLM-L-6-v2,CROSS_ENCODER,Q4,q4_object,semantic,2.5,2.5,Fully Satisfied,True,Sigmoid: 0.995 (Logit: 5.23),,,0.9947
+student1,qwen2.5:7b,LLM,Q1,q1_definition,semantic,2.0,2.0,Satisfied,True,The answer correctly defines inheritance as a mechanism in OOP where a derived class acquires properties and behaviors from a base class.,,,
+student1,qwen2.5:7b,LLM,Q1,q1_types,minimum_count,3.0,3.0,Satisfied,True,"The answer correctly names and briefly explains four types of inheritance: single, multilevel, hierarchical, and multiple. Hybrid inheritance is also mentioned, though not explained, which still satisfies the minimum count requirement.",,,
+student1,qwen2.5:7b,LLM,Q2,q2_definition,semantic,1.0,1.0,Satisfied,True,The answer correctly defines Object Oriented Programming as a programming paradigm based on objects that contain data and behaviour.,,,
+student1,qwen2.5:7b,LLM,Q2,q2_encapsulation,semantic,1.0,1.0,Satisfied,True,The answer explains encapsulation as bundling data and methods into a single unit and controlling access to components.,,,
+student1,qwen2.5:7b,LLM,Q2,q2_abstraction,semantic,1.0,1.0,Satisfied,True,The answer correctly describes abstraction as hiding implementation details and exposing essential features.,,,
+student1,qwen2.5:7b,LLM,Q2,q2_inheritance,semantic,1.0,1.0,Satisfied,True,The answer accurately states that inheritance allows a class to inherit properties and behaviours from another class.,,,
+student1,qwen2.5:7b,LLM,Q2,q2_polymorphism,semantic,1.0,1.0,Satisfied,True,The answer correctly defines polymorphism as allowing objects of different classes to be treated as objects of a common base class.,,,
+student1,qwen2.5:7b,LLM,Q3,q3_definition,semantic,1.0,1.0,Satisfied,True,The student correctly defined polymorphism as a concept that allows a single entity to take multiple forms and enables the same method or interface to behave differently depending on the object involved.,,,
+student1,qwen2.5:7b,LLM,Q3,q3_compile_time,semantic,2.0,2.0,Satisfied,True,The student correctly described compile-time polymorphism as achieved through method overloading and resolved at compile time.,,,
+student1,qwen2.5:7b,LLM,Q3,q3_runtime,semantic,2.0,2.0,Satisfied,True,The student correctly described runtime polymorphism as achieved through method overriding and resolved at runtime.,,,
+student1,qwen2.5:7b,LLM,Q4,q4_class,semantic,2.5,2.5,Satisfied,True,"The answer correctly describes a class as a blueprint that defines data and behavior for objects, which aligns with the rubric criteria.",,,
+student1,qwen2.5:7b,LLM,Q4,q4_object,semantic,2.5,2.5,Satisfied,True,"The answer correctly describes an object as an instance of a class that accesses its data and operations, which aligns with the rubric criteria.",,,
+student1,phi3.5:latest,LLM,Q1,q1_definition,semantic,2.0,2.0,Satisfied,True,"The student correctly defined inheritance and mentioned its purpose in OOP, aligning with the rubric criteria.",,,
+student1,phi3.5:latest,LLM,Q1,q1_types,minimum_count,3.0,3.0,Satisfied,True,"The student correctly identified and briefly explained all five types of inheritance, meeting the minimum count requirement and entailment threshold.",,,
+student1,phi3.5:latest,LLM,Q2,q2_definition,semantic,1.0,0.8,Satisfied,True,"The student's answer correctly defines Object Oriented Programming and mentions its purpose and benefits, aligning with the rubric criteria.",,,
+student1,phi3.5:latest,LLM,Q2,q2_encapsulation,semantic,1.0,0.7,Satisfied,True,"The student's answer explains encapsulation, though it could provide a more detailed explanation to fully satisfy the criterion.",,,
+student1,phi3.5:latest,LLM,Q2,q2_abstraction,semantic,1.0,0.7,Satisfied,True,"The student's answer addresses abstraction and its role in hiding complexity, which meets the criterion.",,,
+student1,phi3.5:latest,LLM,Q2,q2_inheritance,semantic,1.0,0.6,Satisfied,True,The student mentions inheritance and its purpose but could elaborate on how it contributes to code reusability and maintainability.,,,
+student1,phi3.5:latest,LLM,Q2,q2_polymorphism,semantic,1.0,0.6,Satisfied,True,The student's answer touches on polymorphism and its concept but lacks detail on how it functions within OOP.,,,
+student1,phi3.5:latest,LLM,Q3,q3_definition,semantic,1.0,0.8,Satisfied,True,"The student correctly defined polymorphism and mentioned that it allows a single entity to take multiple forms. They also correctly stated that the same method or interface can behave differently depending on the object involved, aligning with the rubric criteria.",,,
+student1,phi3.5:latest,LLM,Q3,q3_compile_time,semantic,2.0,1.5,Satisfied,True,"The student mentioned method overloading and correctly identified it as a way to achieve compile-time polymorphism. However, they did not explicitly mention that it is resolved at compile time, which is a requirement of the rubric criteria.",,,
+student1,phi3.5:latest,LLM,Q3,q3_runtime,semantic,2.0,1.5,Satisfied,True,"The student correctly identified runtime polymorphism and mentioned method overriding as a way to achieve it. They also correctly stated that the method is resolved during program execution, aligning with the rubric criteria.",,,
+student1,phi3.5:latest,LLM,Q4,q4_class,semantic,2.5,2.3,Satisfied,True,"The student correctly described a class as a blueprint that defines data and behaviour for objects, and mentioned grouping related fields and methods, which aligns with the rubric criteria. However, the student could have provided more detail about the allocation of memory for instance and static members, which was not explicitly addressed in the rubric criteria but is relevant to understanding classes and objects.",,,
+student1,phi3.5:latest,LLM,Q4,q4_object,semantic,2.5,2.2,Satisfied,True,"The student accurately described an object as an instance of a class with its own actual property values, which meets the rubric criteria. To fully satisfy the criterion, the student could have expanded on how objects hold their state, similar to the provided model answer, to demonstrate a deeper understanding of the concept.",,,

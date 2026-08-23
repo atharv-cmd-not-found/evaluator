@@ -1,161 +1,199 @@
 
----
+# AI Question & Rubric Evaluation Pipeline
 
-### `README.md`
+An automated, multi-model academic answer evaluation and benchmarking platform. This system grades student answers against structured question rubrics and reference model answers using a hybrid framework combining **Cross-Encoder Neural Networks** (Natural Language Inference, Semantic Textual Similarity, and Passage Rerankers) with **Local Open-Source Large Language Models (LLMs)** served via Ollama.
 
-```markdown
-# AI Answer Evaluator (Rubric & NLI Based)
 
-An automated, non-LLM pipeline for evaluating student answers against multi-question rubrics using **DeBERTa Natural Language Inference (NLI) Cross-Encoders** and deterministic rule matchers. 
 
-The pipeline dynamically fetches model answers, rubrics, and student submissions directly from the target GitHub repository (`ai-question-mapping`), evaluates the answers sentence-by-sentence, and outputs structured JSON reports containing criterion-level score breakdowns.
+## Key Features
 
----
+- **Multi-Model Benchmark Architecture**: Seamlessly evaluates and compares grading performance across DeBERTa (NLI), RoBERTa (STS), BGE Reranker, and local instruction-tuned LLMs (Qwen 2.5, Mistral, Phi-3.5).
+- **Fine-Grained Criterion Diagnostics**: Evaluates responses on a criterion-by-criterion basis using token entailment scores, contradiction penalties, semantic similarity thresholds, and minimum entity match counts.
+- **Robust Local Execution**: Runs inference entirely on local hardware without sending proprietary data to external cloud APIs.
+- **Dynamic CLI & Interactive Fallback**: Supports command-line flag execution for automated pipelines, alongside an interactive terminal interface for ad-hoc grading.
+- **Dual-Layer Reporting Engine**: Produces individual per-student evaluation JSON schemas and combined comparative CSV benchmark reports for aggregate analysis.
+- **Error-Tolerant Engine**: Auto-detects offline LLM services and gracefully falls back to available neural Cross-Encoder models without halting evaluation pipelines.
 
-## 🏗️ Project Architecture
 
+
+## Tech Stack & Dependencies
+
+### Core Technologies
+- **Python 3.10+**: Core programming environment.
+- **PyTorch (`torch`)**: Deep learning computation and tensor operations.
+- **Hugging Face Transformers & Sentence-Transformers**: Cross-Encoder sequence classification and embedding models.
+- **Pydantic V2**: Strict schema enforcement, input validation, and structured serialization.
+- **Ollama Engine**: Local execution runtime for quantized Large Language Models.
+- **Pandas & NumPy**: Analytical data structures, vectorized scoring, and tabular data export.
+- **Requests**: HTTP networking client for communicating with Ollama REST API endpoints.
+
+### Complete Dependency Manifest (`requirements.txt`)
 ```text
-evaluator_project/
-│
-├── output/                         # Output directory generated at runtime
-│   └── student1_evaluated.json
-│
-├── src/
-│   ├── __init__.py
-│   ├── schemas.py                 # Pydantic data models for input/output JSONs
-│   ├── utils.py                   # GitHub fetching (urllib) & file I/O helpers
-│   ├── criteria_evaluators.py     # NLI semantic and count-based evaluation handlers
-│   └── engine.py                  # DeBERTa Cross-Encoder scoring engine
-│
-├── requirements.txt               # Dependencies
-├── main.py                        # Automated execution entry point
-└── README.md
+torch>=2.2.0
+sentence-transformers>=3.0.0
+transformers>=4.40.0
+pydantic>=2.5.0
+pandas>=2.1.0
+numpy>=1.24.0
+requests>=2.31.0
+tabulate>=0.9.0
 
 ```
 
 ---
 
-## ⚡ Key Features
+## Local LLM Setup (Ollama)
 
-* **Zero LLM Dependency:** Runs completely deterministically using transformer cross-encoders without external API costs or stochastic hallucination risks.
-* **100% Automated GitHub Integration:** Downloads `rubric.json`, `model_answers.json`, and all student files in `input/` over HTTPS directly from GitHub using `urllib`.
-* **Multi-Criteria Support:**
-* `type: "semantic"`: Evaluates conceptual alignment via NLI Entailment vs. Contradiction.
-* `type: "minimum_count"`: Checks presence and count of target options/keywords in student answers.
+The pipeline integrates with open-source Large Language Models using [Ollama](https://ollama.com/) over its local HTTP REST API (`http://localhost:11434/api/generate`).
 
+### 1. Start the Ollama Service
 
-* **Sentence-Level Matching:** Prevents dilution by splitting student responses into individual sentences and extracting peak entailment scores per criterion.
-
----
-
-## 🚀 Quick Start
-
-### 1. Create and Activate Virtual Environment (`.venv`)
-
-Set up an isolated virtual environment before installing dependencies:
-
-#### Windows (PowerShell)
-
-```powershell
-# Create the virtual environment
-python -m venv .venv
-
-# Activate the virtual environment
-.\.venv\Scripts\Activate.ps1
-
-```
-
-#### Windows (Command Prompt)
-
-```cmd
-# Create the virtual environment
-python -m venv .venv
-
-# Activate the virtual environment
-.\.venv\Scripts\activate.bat
-
-```
-
-#### macOS / Linux
+Ensure the Ollama background daemon is active:
 
 ```bash
-# Create the virtual environment
-python3 -m venv .venv
+# Start the Ollama server process
+ollama serve
 
-# Activate the virtual environment
+```
+
+*Note for Windows Users: If installed via the desktop installer, Ollama runs automatically in the background system tray. Verify server readiness by querying the endpoint:*
+
+```bash
+curl http://localhost:11434
+# Expected output: "Ollama is running"
+
+```
+
+### 2. Pull Required Models
+
+Download the supported evaluation models locally:
+
+```bash
+# Primary recommended model (7B parameters, ~4.7 GB)
+ollama pull qwen2.5:7b
+
+# Lightweight model optimized for CPU execution (~1.9 GB)
+ollama pull qwen2.5:3b
+
+# Secondary benchmark models
+ollama pull mistral:7b
+ollama pull phi3.5:latest
+
+```
+
+### 3. Verify Model Installation
+
+```bash
+# View list of installed models
+ollama list
+
+# Run a quick sanity check
+ollama run qwen2.5:7b "Evaluate: What is 2+2? Reply in JSON."
+
+```
+
+---
+
+## Installation & Setup
+
+```bash
+# 1. Clone the project repository
+git clone https://github.com/atharv-cmd-not-found/evaluator.git
+cd evaluator
+
+# 2. Create and activate a Python virtual environment
+python -m venv .venv
+
+# On Windows (PowerShell):
+.venv\Scripts\Activate.ps1
+
+# On Linux / macOS:
 source .venv/bin/activate
 
-```
-
----
-
-### 2. Installation
-
-With the virtual environment activated, install the required packages:
-
-```bash
+# 3. Install required packages
 pip install -r requirements.txt
 
 ```
 
 ---
 
-### 3. Execution
+## Running the Evaluator
 
-Run the automated pipeline:
+The evaluation pipeline can be launched in two modes: **Flag-Based CLI Execution** or **Interactive Terminal Execution**.
+
+### 1. Flag-Based Execution (Recommended)
+
+Pass custom paths for the rubric, reference answers, student submissions, and output directories using explicit command-line flags:
+
+```bash
+# Evaluate a single student submission
+python main.py -r input/rubric.json -m input/model_answers.json -s input/student1.json
+
+# Evaluate multiple student submissions simultaneously
+python main.py -r input/rubric.json -m input/model_answers.json -s input/student1.json input/student2.json input/student3.json
+
+# Export to a custom output directory
+python main.py -r custom_rubric.json -m custom_answers.json -s input/student1.json -o custom_output_dir
+
+```
+
+#### CLI Flag Reference
+
+| Flag | Long Flag | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `-r` | `--rubric` | `str` | `input/rubric.json` | Path to the structured rubric definition JSON file. |
+| `-m` | `--model_answers` | `str` | `input/model_answers.json` | Path to the reference/model answers JSON file. |
+| `-s` | `--students` | `list` | `None` | One or more space-separated paths to student JSON files. |
+| `-o` | `--output_dir` | `str` | `output` | Target directory where JSON and CSV reports are written. |
+
+---
+
+### 2. Interactive Terminal Execution
+
+Run the script without passing flags to trigger the interactive prompt:
 
 ```bash
 python main.py
 
 ```
 
-The pipeline will:
+* When prompted:
+```text
+Enter path(s) to student JSON file(s) [or leave blank to scan 'input/']:
 
-1. Connect to GitHub and fetch `rubric.json` and `model_answers.json`.
-2. Discover all student files in the GitHub `input/` folder using the GitHub REST API.
-3. Process each submission and output evaluation reports inside `output/<student_id>_evaluated.json`.
+```
 
----
 
-## 📊 Evaluation Logic & Metrics
+* **Press Enter** to automatically scan and evaluate all valid student `.json` files inside the `input/` folder.
+* Or manually type a comma-separated or space-separated list of relative file paths (e.g., `input/student1.json, input/student2.json`).
 
-Semantic criteria use **Natural Language Inference (NLI)** probabilities:
 
-$$\text{Output} = \Big[ P(\text{Contradiction}),\, P(\text{Entailment}),\, P(\text{Neutral}) \Big]$$
-
-* **$P(\text{Entailment}) \ge 0.85$**: Fully Satisfied $\rightarrow$ **Full Marks**
-* **$P(\text{Entailment}) \ge \text{Threshold}$**: Partially Satisfied $\rightarrow$ **Scaled Partial Marks**
-* **$P(\text{Contradiction}) > 0.60$**: Factually Incorrect $\rightarrow$ **0 Marks**
-* **$P(\text{Neutral}) \approx 1.0$**: Missing Concept $\rightarrow$ **0 Marks**
 
 ---
 
-## 🔮 Future Model Upgrade Roadmap
+## Project Structure
 
-To improve evaluation accuracy, reduce latency, or adapt to larger documents, the pipeline can be upgraded with alternative non-LLM models:
+```text
+├── input/
+│   ├── rubric.json                # Grading criteria, weightages, and thresholds
+│   ├── model_answers.json         # Reference answers for evaluation context
+│   └── student1.json              # Student submission JSON file
+├── output/
+│   ├── comparative_students_summary.csv    # Consolidated scorecards across all models
+│   ├── comparative_criteria_benchmark.csv  # Granular criteria metrics and diagnostics
+│   └── student1_*_evaluated.json           # Individual detailed student JSON outputs
+├── src/
+│   ├── criteria_evaluators.py     # NLI, STS, and minimum count grading logic
+│   ├── engine.py                  # Evaluation orchestrator across all model types
+│   ├── llm_evaluator.py           # Ollama API client and structured prompting handler
+│   ├── schemas.py                 # Pydantic data contracts for evaluation results
+│   └── utils.py                   # File I/O, sentence splitting, and path resolution
+├── main.py                        # Program entry point with CLI and interactive handling
+├── requirements.txt               # Locked project dependencies
+└── README.md                      # Project documentation
 
-### 1. Specialized Reranking Cross-Encoders
+```
 
-* **`BAAI/bge-reranker-large`**: Outstanding performance on dense semantic similarity and key-concept alignment.
-* **`BAAI/bge-reranker-v2-m3`**: Multilingual support with fast execution for domain-specific terminology.
-* **`cross-encoder/ms-marco-Electra-large`**: Optimized for fine-grained factual accuracy checks.
+```
 
-### 2. Multi-Dataset Fine-Tuned NLI Models
-
-* **`MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli`**: Trained across multi-NLI datasets (FEVER, ANLI, WanLI). Significantly reduces false neutral readings on complex academic sentences.
-* **`facebook/bart-large-mnli`**: Highly stable zero-shot classifier for structural and descriptive criteria.
-
-### 3. Two-Stage Hybrid Pipeline (Embedding + Cross-Encoder)
-
-For multi-paragraph student essays, a two-stage pipeline can be implemented:
-
-1. **Stage 1 (Dense Retrieval):** Filter student responses to top-$K$ relevant sentences using `BAAI/bge-large-en-v1.5` or `all-mpnet-base-v2`.
-2. **Stage 2 (NLI Verification):** Evaluate only those $K$ candidate sentences through DeBERTa, eliminating background noise and speeding up execution.
-
-### 4. Custom Fine-Tuned DeBERTa
-
-Fine-tuning `DeBERTa-v3` directly on 100–200 human-graded student answer pairs using PyTorch / Hugging Face `SentenceTransformers` to maximize Quadratic Weighted Kappa (QWK) scores for subject-specific rubrics.
-
-### Current Problems:
-
-Low accuracy of DeBERT NLI model.
+```
