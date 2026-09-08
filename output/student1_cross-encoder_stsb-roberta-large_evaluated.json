@@ -26,9 +26,7 @@
           "entailment_score": null,
           "contradiction_score": null,
           "neutral_score": null,
-          "semantic_similarity": 0.9365,
-          "matched_options": null,
-          "matched_count": null
+          "semantic_similarity": 0.9365
         },
         {
           "criterion_id": "q1_types",
@@ -42,15 +40,7 @@
           "entailment_score": null,
           "contradiction_score": null,
           "neutral_score": null,
-          "semantic_similarity": null,
-          "matched_options": [
-            "single inheritance",
-            "multiple inheritance",
-            "multilevel inheritance",
-            "hierarchical inheritance",
-            "hybrid inheritance"
-          ],
-          "matched_count": 5
+          "semantic_similarity": null
         }
       ],
       "evaluator_feedback": "Evaluated using cross-encoder/stsb-roberta-large (STS)"
@@ -75,9 +65,7 @@
           "entailment_score": null,
           "contradiction_score": null,
           "neutral_score": null,
-          "semantic_similarity": 0.8445,
-          "matched_options": null,
-          "matched_count": null
+          "semantic_similarity": 0.8445
         },
         {
           "criterion_id": "q2_encapsulation",
@@ -91,9 +79,7 @@
           "entailment_score": null,
           "contradiction_score": null,
           "neutral_score": null,
-          "semantic_similarity": 0.786,
-          "matched_options": null,
-          "matched_count": null
+          "semantic_similarity": 0.786
         },
         {
           "criterion_id": "q2_abstraction",
@@ -107,9 +93,7 @@
           "entailment_score": null,
           "contradiction_score": null,
           "neutral_score": null,
-          "semantic_similarity": 0.8894,
-          "matched_options": null,
-          "matched_count": null
+          "semantic_similarity": 0.8894
         },
         {
           "criterion_id": "q2_inheritance",
@@ -123,9 +107,7 @@
           "entailment_score": null,
           "contradiction_score": null,
           "neutral_score": null,
-          "semantic_similarity": 0.8192,
-          "matched_options": null,
-          "matched_count": null
+          "semantic_similarity": 0.8192
         },
         {
           "criterion_id": "q2_polymorphism",
@@ -139,9 +121,7 @@
           "entailment_score": null,
           "contradiction_score": null,
           "neutral_score": null,
-          "semantic_similarity": 0.5276,
-          "matched_options": null,
-          "matched_count": null
+          "semantic_similarity": 0.5276
         }
       ],
       "evaluator_feedback": "Evaluated using cross-encoder/stsb-roberta-large (STS)"
@@ -166,9 +146,7 @@
           "entailment_score": null,
           "contradiction_score": null,
           "neutral_score": null,
-          "semantic_similarity": 0.7333,
-          "matched_options": null,
-          "matched_count": null
+          "semantic_similarity": 0.7333
         },
         {
           "criterion_id": "q3_compile_time",
@@ -182,9 +160,7 @@
           "entailment_score": null,
           "contradiction_score": null,
           "neutral_score": null,
-          "semantic_similarity": 0.7488,
-          "matched_options": null,
-          "matched_count": null
+          "semantic_similarity": 0.7488
         },
         {
           "criterion_id": "q3_runtime",
@@ -198,9 +174,7 @@
           "entailment_score": null,
           "contradiction_score": null,
           "neutral_score": null,
-          "semantic_similarity": 0.8144,
-          "matched_options": null,
-          "matched_count": null
+          "semantic_similarity": 0.8144
         }
       ],
       "evaluator_feedback": "Evaluated using cross-encoder/stsb-roberta-large (STS)"
@@ -225,9 +199,7 @@
           "entailment_score": null,
           "contradiction_score": null,
           "neutral_score": null,
-          "semantic_similarity": 0.9054,
-          "matched_options": null,
-          "matched_count": null
+          "semantic_similarity": 0.9054
         },
         {
           "criterion_id": "q4_object",
@@ -241,9 +213,7 @@
           "entailment_score": null,
           "contradiction_score": null,
           "neutral_score": null,
-          "semantic_similarity": 0.6508,
-          "matched_options": null,
-          "matched_count": null
+          "semantic_similarity": 0.6508
         }
       ],
       "evaluator_feedback": "Evaluated using cross-encoder/stsb-roberta-large (STS)"

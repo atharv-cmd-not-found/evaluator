@@ -35,7 +35,7 @@ def evaluate_semantic_criterion(
     # -------------------------------------------------------------
     # 1. Natural Language Inference (NLI) Cross-Encoders
     # -------------------------------------------------------------
-    if model_type == "nli":
+    '''if model_type == "nli":
         probs = F.softmax(torch.tensor(raw_predictions, dtype=torch.float32), dim=1)
 
         # Find the sentence with the highest entailment probability
@@ -116,33 +116,33 @@ def evaluate_semantic_criterion(
     # -------------------------------------------------------------
     # 3. STS Cross-Encoders (e.g., stsb-roberta-large)
     # -------------------------------------------------------------
+    '''
+    scores = np.array(raw_predictions, dtype=float).flatten()
+    best_idx = int(np.argmax(scores))
+    best_score = round(float(np.clip(scores[best_idx], 0.0, 1.0)), 4)
+
+    satisfied = best_score >= 0.65
+    if best_score >= 0.80:
+        status = "Fully Satisfied"
+        awarded = criterion.marks
+    elif best_score >= 0.50:
+        status = "Partially Satisfied"
+        awarded = round(criterion.marks * best_score, 2)
     else:
-        scores = np.array(raw_predictions, dtype=float).flatten()
-        best_idx = int(np.argmax(scores))
-        best_score = round(float(np.clip(scores[best_idx], 0.0, 1.0)), 4)
+        status = "Missing / Low Similarity"
+        awarded = 0.0
 
-        satisfied = best_score >= 0.65
-        if best_score >= 0.80:
-            status = "Fully Satisfied"
-            awarded = criterion.marks
-        elif best_score >= 0.50:
-            status = "Partially Satisfied"
-            awarded = round(criterion.marks * best_score, 2)
-        else:
-            status = "Missing / Low Similarity"
-            awarded = 0.0
-
-        return CriterionEvaluationResult(
-            criterion_id=criterion.id,
-            description=criterion.description,
-            type=criterion.type,
-            max_marks=criterion.marks,
-            marks_awarded=awarded,
-            satisfied=satisfied,
-            status=status,
-            diagnostics=f"STS Similarity: {best_score:.3f}",
-            semantic_similarity=best_score,
-        )
+    return CriterionEvaluationResult(
+        criterion_id=criterion.id,
+        description=criterion.description,
+        type=criterion.type,
+        max_marks=criterion.marks,
+        marks_awarded=awarded,
+        satisfied=satisfied,
+        status=status,
+        diagnostics=f"STS Similarity: {best_score:.3f}",
+        semantic_similarity=best_score,
+    )
 
 
 def evaluate_minimum_count_criterion(

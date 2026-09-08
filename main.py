@@ -4,69 +4,24 @@ import sys
 from typing import List
 import pandas as pd
 
-from src.engine import CrossEncoderRubricEvaluator, LLMRubricEvaluator
+from src.engine import CrossEncoderRubricEvaluator #LLMRubricEvaluator
 from src.utils import load_json_file, save_json_file
 
 # -------------------------------------------------------------
 # Comprehensive Benchmark Catalog
 # -------------------------------------------------------------
 CROSS_ENCODER_CONFIGS = [
-    # 1. NLI Models
-    {
-        "name": "cross-encoder/nli-deberta-v3-large",
-        "type": "nli",
-        "label": "DeBERTa-v3-Large (NLI)",
-    },
-    {
-        "name": "cross-encoder/nli-deberta-v3-base",
-        "type": "nli",
-        "label": "DeBERTa-v3-Base (NLI)",
-    },
-    {
-        "name": "cross-encoder/nli-roberta-base",
-        "type": "nli",
-        "label": "RoBERTa-Base (NLI)",
-    },
-    {
-        "name": "cross-encoder/nli-distilroberta-base",
-        "type": "nli",
-        "label": "DistilRoBERTa (NLI)",
-    },
+    
     # 2. STS Models
     {
         "name": "cross-encoder/stsb-roberta-large",
         "type": "sts",
         "label": "RoBERTa-Large (STS)",
     },
-    {
-        "name": "cross-encoder/stsb-roberta-base",
-        "type": "sts",
-        "label": "RoBERTa-Base (STS)",
-    },
-    {
-        "name": "cross-encoder/stsb-distilroberta-base",
-        "type": "sts",
-        "label": "DistilRoBERTa (STS)",
-    },
-    # 3. Rerankers
-    {
-        "name": "BAAI/bge-reranker-base",
-        "type": "ranking",
-        "label": "BGE-Reranker-Base",
-    },
-    {
-        "name": "cross-encoder/ms-marco-MiniLM-L-6-v2",
-        "type": "ranking",
-        "label": "MiniLM-L6 (MS-MARCO)",
-    },
+   
 ]
 
-# Open-Source LLMs to benchmark (Ensure models are pulled in Ollama)
-LLM_CONFIGS = [
-    "qwen2.5:7b",
-    "mistral:7b",
-    "phi3.5:latest",
-]
+
 
 
 def parse_arguments():
@@ -196,12 +151,7 @@ def main():
         except Exception as e:
             print(f"⚠️ Could not load {cfg['name']}: {e}")
 
-    print("\n--- Initializing Open-Source LLM Evaluators ---")
-    for llm_name in LLM_CONFIGS:
-        try:
-            evaluators.append(LLMRubricEvaluator(model_name=llm_name))
-        except Exception as e:
-            print(f"⚠️ Skipping {llm_name} (Ollama unavailable or offline): {e}")
+  
 
     if not evaluators:
         print("❌ No evaluator models could be loaded. Exiting.")
@@ -294,16 +244,30 @@ def main():
         summary_csv = output_dir / "comparative_students_summary.csv"
         benchmark_csv = output_dir / "comparative_criteria_benchmark.csv"
 
-        df_summary.to_csv(summary_csv, index=False)
-        df_benchmark.to_csv(benchmark_csv, index=False)
+        # Append to summary CSV (write header only if file does not exist)
+        df_summary.to_csv(
+            summary_csv,
+            mode="a",
+            header=not summary_csv.exists(),
+            index=False,
+            encoding="utf-8"
+        )
+
+        # Append to benchmark CSV (write header only if file does not exist)
+        df_benchmark.to_csv(
+            benchmark_csv,
+            mode="a",
+            header=not benchmark_csv.exists(),
+            index=False,
+            encoding="utf-8"
+        )
 
         print("\n" + "=" * 90)
         print("🎉 COMPARATIVE EVALUATION COMPLETE")
         print("=" * 90)
-        print(f"• Student Summaries Exported:  {summary_csv.resolve()}")
-        print(f"• Criteria Benchmarks Exported: {benchmark_csv.resolve()}")
+        print(f"• Student Summaries Appended:  {summary_csv.resolve()}")
+        print(f"• Criteria Benchmarks Appended: {benchmark_csv.resolve()}")
         print("\n" + df_summary.to_string(index=False))
-
 
 if __name__ == "__main__":
     main()

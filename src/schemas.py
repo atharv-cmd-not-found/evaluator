@@ -40,10 +40,7 @@ class CriterionEvaluationResult(BaseModel):
     contradiction_score: Optional[float] = Field(default=None, ge=0.0, le=1.0)
     neutral_score: Optional[float] = Field(default=None, ge=0.0, le=1.0)
     semantic_similarity: Optional[float] = Field(default=None, ge=0.0, le=1.0)
-    
-    # Minimum Count Metrics
-    matched_options: Optional[List[str]] = Field(default=None, description="List of options successfully detected in answer")
-    matched_count: Optional[int] = Field(default=None, ge=0, description="Total count of matched options")
+   
 
 
 class QuestionEvaluationResult(BaseModel):

@@ -1,0 +1,208 @@
+{
+  "student_id": "student_2",
+  "evaluator_model": "cross-encoder/stsb-roberta-large",
+  "evaluator_type": "CROSS_ENCODER",
+  "max_total_marks": 20.0,
+  "total_marks_awarded": 18.08,
+  "percentage": 90.4,
+  "question_evaluations": {
+    "Q1": {
+      "question_id": "Q1",
+      "question_text": "Explain data structures and their types.",
+      "student_answer": "A data structure is a specialized format for organizing, processing, retrieving and storing data in computer memory so it can be used efficiently. These are broadly split into linear and non-linear.\n\n1. Linear Data Structure: Elements are arranged in a sequential, linear order where each element is connected to its previous and next neighbor. \u2022 Array: A fixed-size collection of elements of the same data type stored at contiguous memory locations. \u2022 Linked List: A sequence of nodes where each node contain data and a reference to the next node, allowing flexible memory allocation. \u2022 Stack: A collection that follows last in first out, i only one door for input & output. \u2022 Queue: A collection that follows first-in-first-out, image it as a pipe.\n\nNon-Linear Data Structure: Elements are arranged severally; instead they connect in hierarchical or network relationship. \u2022 Tree: A hierarchical structure consisting of a root node with branching child node, commonly used for file system. \u2022 Graph: A network of nodes (vertices) connected by links (edges), used to represent web link social media connections or map.",
+      "max_total_marks": 5.0,
+      "total_marks_awarded": 4.67,
+      "percentage": 93.4,
+      "criteria_breakdown": [
+        {
+          "criterion_id": "q1_definition",
+          "description": "A data structure is a specialized way of organizing, storing, and managing data in computer memory so that it can be accessed, processed, and updated efficiently.",
+          "type": "semantic",
+          "max_marks": 2.0,
+          "marks_awarded": 2.0,
+          "satisfied": true,
+          "status": "Fully Satisfied",
+          "diagnostics": "STS Similarity: 0.908",
+          "entailment_score": null,
+          "contradiction_score": null,
+          "neutral_score": null,
+          "semantic_similarity": 0.9078
+        },
+        {
+          "criterion_id": "q1_linear_vs_nonlinear",
+          "description": "Classification into linear (elements arranged sequentially/adjacently) and non-linear data structures (hierarchical or network relationships).",
+          "type": "semantic",
+          "max_marks": 1.5,
+          "marks_awarded": 1.17,
+          "satisfied": true,
+          "status": "Partially Satisfied",
+          "diagnostics": "STS Similarity: 0.778",
+          "entailment_score": null,
+          "contradiction_score": null,
+          "neutral_score": null,
+          "semantic_similarity": 0.7777
+        },
+        {
+          "criterion_id": "q1_examples",
+          "description": "Correctly identify examples of linear and non-linear data structures.",
+          "type": "minimum_count",
+          "max_marks": 1.5,
+          "marks_awarded": 1.5,
+          "satisfied": true,
+          "status": "Fully Satisfied (Matched 6/3 required)",
+          "diagnostics": "Matched 6/3 options: ['array', 'linked list', 'stack', 'queue', 'tree', 'graph']",
+          "entailment_score": null,
+          "contradiction_score": null,
+          "neutral_score": null,
+          "semantic_similarity": null
+        }
+      ],
+      "evaluator_feedback": "Evaluated using cross-encoder/stsb-roberta-large (STS)"
+    },
+    "Q2": {
+      "question_id": "Q2",
+      "question_text": "Explain an algorithm and the characteristics of a good algorithm.",
+      "student_answer": "An algorithm is a step by step procedure or set of rules designed to perform a specific task or solve a defined problem.\n\nCharacteristics of Good Algorithm: A high-quality algorithm must meet several key technical and practical standards.\n\nInputs: It must have zero or more well-defined inputs.\n\nOutputs: It must produce at least one clearly defined output matching the goal.\n\nDefiniteness: Each step must be completely unambiguous and clearly stated.\n\nEffectiveness: Every instruction must be basic enough to be carried out exactly.\n\nLanguage Independence: The underlying logic must apply to any programming language.\n\nFiniteness: It must terminate after a specific limited number of steps.\n\nFeasibility: It must work effectively within available system resources like time and memory.",
+      "max_total_marks": 5.0,
+      "total_marks_awarded": 5.0,
+      "percentage": 100.0,
+      "criteria_breakdown": [
+        {
+          "criterion_id": "q2_definition",
+          "description": "An algorithm is a finite set of well-defined, step-by-step instructions designed to solve a problem or perform a computation.",
+          "type": "semantic",
+          "max_marks": 2.0,
+          "marks_awarded": 2.0,
+          "satisfied": true,
+          "status": "Fully Satisfied",
+          "diagnostics": "STS Similarity: 0.875",
+          "entailment_score": null,
+          "contradiction_score": null,
+          "neutral_score": null,
+          "semantic_similarity": 0.8751
+        },
+        {
+          "criterion_id": "q2_characteristics",
+          "description": "List and describe key characteristics of a good algorithm.",
+          "type": "minimum_count",
+          "max_marks": 3.0,
+          "marks_awarded": 3.0,
+          "satisfied": true,
+          "status": "Fully Satisfied (Matched 5/4 required)",
+          "diagnostics": "Matched 5/4 options: ['well-defined inputs', 'definiteness', 'finiteness', 'effectiveness', 'language independence']",
+          "entailment_score": null,
+          "contradiction_score": null,
+          "neutral_score": null,
+          "semantic_similarity": null
+        }
+      ],
+      "evaluator_feedback": "Evaluated using cross-encoder/stsb-roberta-large (STS)"
+    },
+    "Q3": {
+      "question_id": "Q3",
+      "question_text": "Explain complexity analysis and its types.",
+      "student_answer": "Complexity analysis is a technique used to measure the efficiency of an algorithm in terms of computer resources it consumes as input size grows.\n\nTypes of complexity Analysis:\n\nTime complexity: Measure the total execution time required by an algorithm to run to completion as a function of the input size.\n\nSpace complexity: Measures the total amount of working memory or storage space required by the algorithm during its lifecycle.\n\nCases Used in Complexity Analysis:\n\nWorst case: The maximum possible resources required for any input of a given size, typically denoted using Big O notation.\n\nBest case: The minimum possible resources required for most ideal input scenarios, typically denoted using Big omega (\u03a9).\n\nAverage case: The expected amount of resources required taken over all possible inputs, typically denoted using Big theta (\u0398).",
+      "max_total_marks": 5.0,
+      "total_marks_awarded": 4.0,
+      "percentage": 80.0,
+      "criteria_breakdown": [
+        {
+          "criterion_id": "q3_definition",
+          "description": "Complexity analysis evaluates the efficiency of an algorithm with respect to input size by determining how time and memory requirements grow.",
+          "type": "semantic",
+          "max_marks": 1.5,
+          "marks_awarded": 1.5,
+          "satisfied": true,
+          "status": "Fully Satisfied",
+          "diagnostics": "STS Similarity: 0.851",
+          "entailment_score": null,
+          "contradiction_score": null,
+          "neutral_score": null,
+          "semantic_similarity": 0.8509
+        },
+        {
+          "criterion_id": "q3_time_complexity",
+          "description": "Time complexity measures the execution time or number of operations required by an algorithm relative to input size.",
+          "type": "semantic",
+          "max_marks": 1.5,
+          "marks_awarded": 1.5,
+          "satisfied": true,
+          "status": "Fully Satisfied",
+          "diagnostics": "STS Similarity: 0.816",
+          "entailment_score": null,
+          "contradiction_score": null,
+          "neutral_score": null,
+          "semantic_similarity": 0.8161
+        },
+        {
+          "criterion_id": "q3_space_complexity",
+          "description": "Space complexity measures the amount of memory or storage required by an algorithm during execution.",
+          "type": "semantic",
+          "max_marks": 1.0,
+          "marks_awarded": 1.0,
+          "satisfied": true,
+          "status": "Fully Satisfied",
+          "diagnostics": "STS Similarity: 0.920",
+          "entailment_score": null,
+          "contradiction_score": null,
+          "neutral_score": null,
+          "semantic_similarity": 0.9204
+        },
+        {
+          "criterion_id": "q3_cases",
+          "description": "Mention of best, average, and worst case analysis for evaluating performance under different conditions.",
+          "type": "semantic",
+          "max_marks": 1.0,
+          "marks_awarded": 0.0,
+          "satisfied": false,
+          "status": "Missing / Low Similarity",
+          "diagnostics": "STS Similarity: 0.397",
+          "entailment_score": null,
+          "contradiction_score": null,
+          "neutral_score": null,
+          "semantic_similarity": 0.3974
+        }
+      ],
+      "evaluator_feedback": "Evaluated using cross-encoder/stsb-roberta-large (STS)"
+    },
+    "Q4": {
+      "question_id": "Q4",
+      "question_text": "Explain Array and Linked List.",
+      "student_answer": "An array is a linear data structure that stores elements of the same data types in contiguous memory location allowing direct access to any element using an index.\n\nA linked list is a linear data structure where elements are not stored in contiguous memory location but are instead linked memory locations together sequentially using pointers or references within each node.\n\nKey Differences:\n\n- Memory Allocation: Arrays use fixed, contiguous memory; linked lists use dynamic scattered memory.\n- Access speed: Arrays allow instant access via index. Linked require traversing from the start node.\n- Insertion / Deletion: Arrays require shifting elements; linked list required updating only a few pointers.",
+      "max_total_marks": 5.0,
+      "total_marks_awarded": 4.41,
+      "percentage": 88.2,
+      "criteria_breakdown": [
+        {
+          "criterion_id": "q4_array",
+          "description": "An array is a linear data structure storing elements of the same data type in contiguous memory locations with fixed size and fast index-based access.",
+          "type": "semantic",
+          "max_marks": 2.5,
+          "marks_awarded": 2.5,
+          "satisfied": true,
+          "status": "Fully Satisfied",
+          "diagnostics": "STS Similarity: 0.922",
+          "entailment_score": null,
+          "contradiction_score": null,
+          "neutral_score": null,
+          "semantic_similarity": 0.9222
+        },
+        {
+          "criterion_id": "q4_linked_list",
+          "description": "A linked list is a linear data structure of nodes storing data and pointers/references to the next node in non-contiguous memory, supporting dynamic sizing and efficient insertion/deletion.",
+          "type": "semantic",
+          "max_marks": 2.5,
+          "marks_awarded": 1.91,
+          "satisfied": true,
+          "status": "Partially Satisfied",
+          "diagnostics": "STS Similarity: 0.765",
+          "entailment_score": null,
+          "contradiction_score": null,
+          "neutral_score": null,
+          "semantic_similarity": 0.7654
+        }
+      ],
+      "evaluator_feedback": "Evaluated using cross-encoder/stsb-roberta-large (STS)"
+    }
+  }
+}

@@ -10,7 +10,6 @@ from src.criteria_evaluators import (
     evaluate_semantic_criterion,
     evaluate_minimum_count_criterion
 )
-from src.llm_evaluator import LLMJudgeEvaluator
 
 
 class BaseRubricEvaluator:
@@ -128,7 +127,7 @@ class CrossEncoderRubricEvaluator(BaseRubricEvaluator):
         )
 
 
-class LLMRubricEvaluator(BaseRubricEvaluator):
+'''class LLMRubricEvaluator(BaseRubricEvaluator):
     """Evaluator supporting Open-Source LLMs (e.g., Qwen 2.5, Mistral, Phi-3.5 via Ollama)."""
 
     def __init__(self, model_name: str = "qwen2.5:7b", endpoint: str = "http://localhost:11434/api/generate"):
@@ -153,7 +152,7 @@ class LLMRubricEvaluator(BaseRubricEvaluator):
             max_marks=rubric.max_marks,
             student_answer=student_answer
         )
-
+'''
 
 # Backward-compatibility alias
 NLIRubricEvaluator = CrossEncoderRubricEvaluator

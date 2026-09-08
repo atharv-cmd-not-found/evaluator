@@ -1,0 +1,108 @@
+{
+  "Q1": {
+    "max_marks": 5,
+    "criteria": [
+      {
+        "id": "q1_definition",
+        "description": "A data structure is a specialized way of organizing, storing, and managing data in computer memory so that it can be accessed, processed, and updated efficiently.",
+        "marks": 2,
+        "type": "semantic"
+      },
+      {
+        "id": "q1_linear_vs_nonlinear",
+        "description": "Classification into linear (elements arranged sequentially/adjacently) and non-linear data structures (hierarchical or network relationships).",
+        "marks": 1.5,
+        "type": "semantic"
+      },
+      {
+        "id": "q1_examples",
+        "description": "Correctly identify examples of linear and non-linear data structures.",
+        "marks": 1.5,
+        "type": "minimum_count",
+        "required_count": 3,
+        "options": [
+          "array",
+          "linked list",
+          "stack",
+          "queue",
+          "tree",
+          "graph"
+        ]
+      }
+    ]
+  },
+  "Q2": {
+    "max_marks": 5,
+    "criteria": [
+      {
+        "id": "q2_definition",
+        "description": "An algorithm is a finite set of well-defined, step-by-step instructions designed to solve a problem or perform a computation.",
+        "marks": 2,
+        "type": "semantic"
+      },
+      {
+        "id": "q2_characteristics",
+        "description": "List and describe key characteristics of a good algorithm.",
+        "marks": 3,
+        "type": "minimum_count",
+        "required_count": 4,
+        "options": [
+          "well-defined inputs",
+          "well-defined outputs",
+          "definiteness",
+          "finiteness",
+          "effectiveness",
+          "correctness",
+          "deterministic behaviour",
+          "language independence"
+        ]
+      }
+    ]
+  },
+  "Q3": {
+    "max_marks": 5,
+    "criteria": [
+      {
+        "id": "q3_definition",
+        "description": "Complexity analysis evaluates the efficiency of an algorithm with respect to input size by determining how time and memory requirements grow.",
+        "marks": 1.5,
+        "type": "semantic"
+      },
+      {
+        "id": "q3_time_complexity",
+        "description": "Time complexity measures the execution time or number of operations required by an algorithm relative to input size.",
+        "marks": 1.5,
+        "type": "semantic"
+      },
+      {
+        "id": "q3_space_complexity",
+        "description": "Space complexity measures the amount of memory or storage required by an algorithm during execution.",
+        "marks": 1,
+        "type": "semantic"
+      },
+      {
+        "id": "q3_cases",
+        "description": "Mention of best, average, and worst case analysis for evaluating performance under different conditions.",
+        "marks": 1,
+        "type": "semantic"
+      }
+    ]
+  },
+  "Q4": {
+    "max_marks": 5,
+    "criteria": [
+      {
+        "id": "q4_array",
+        "description": "An array is a linear data structure storing elements of the same data type in contiguous memory locations with fixed size and fast index-based access.",
+        "marks": 2.5,
+        "type": "semantic"
+      },
+      {
+        "id": "q4_linked_list",
+        "description": "A linked list is a linear data structure of nodes storing data and pointers/references to the next node in non-contiguous memory, supporting dynamic sizing and efficient insertion/deletion.",
+        "marks": 2.5,
+        "type": "semantic"
+      }
+    ]
+  }
+}
