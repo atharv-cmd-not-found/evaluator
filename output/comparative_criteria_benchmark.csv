@@ -33,3 +33,25 @@ student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q3,q3_space_complexity,
 student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q3,q3_cases,semantic,1.0,0.0,Missing / Low Similarity,False,STS Similarity: 0.397,,,0.3974
 student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q4,q4_array,semantic,2.5,2.5,Fully Satisfied,True,STS Similarity: 0.922,,,0.9222
 student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q4,q4_linked_list,semantic,2.5,1.91,Partially Satisfied,True,STS Similarity: 0.765,,,0.7654
+student_1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q1,q1_definition,semantic,2.0,2.0,Fully Satisfied,True,STS Similarity: 0.894,,,0.894
+student_1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q1,q1_linear_vs_nonlinear,semantic,1.5,0.88,Partially Satisfied,False,STS Similarity: 0.590,,,0.5897
+student_1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q1,q1_examples,minimum_count,1.5,1.5,Fully Satisfied (Matched 6/3 required),True,"Matched 6/3 options: ['array', 'linked list', 'stack', 'queue', 'tree', 'graph']",,,
+student_1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q2,q2_definition,semantic,2.0,2.0,Fully Satisfied,True,STS Similarity: 0.946,,,0.9463
+student_1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q2,q2_characteristics,minimum_count,3.0,3.0,Fully Satisfied (Matched 4/4 required),True,"Matched 4/4 options: ['definiteness', 'finiteness', 'effectiveness', 'correctness']",,,
+student_1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q3,q3_definition,semantic,1.5,1.5,Fully Satisfied,True,STS Similarity: 0.893,,,0.8935
+student_1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q3,q3_time_complexity,semantic,1.5,1.5,Fully Satisfied,True,STS Similarity: 0.874,,,0.8738
+student_1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q3,q3_space_complexity,semantic,1.0,0.76,Partially Satisfied,True,STS Similarity: 0.758,,,0.7581
+student_1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q3,q3_cases,semantic,1.0,0.0,Missing / Low Similarity,False,STS Similarity: 0.318,,,0.3182
+student_1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q4,q4_array,semantic,2.5,1.98,Partially Satisfied,True,STS Similarity: 0.794,,,0.7938
+student_1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q4,q4_linked_list,semantic,2.5,1.84,Partially Satisfied,True,STS Similarity: 0.735,,,0.7354
+student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q1,q1_definition,semantic,2.0,2.0,Fully Satisfied,True,STS Similarity: 0.908,,,0.9078
+student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q1,q1_linear_vs_nonlinear,semantic,1.5,1.17,Partially Satisfied,True,STS Similarity: 0.778,,,0.7777
+student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q1,q1_examples,minimum_count,1.5,1.5,Fully Satisfied (Matched 6/3 required),True,"Matched 6/3 options: ['array', 'linked list', 'stack', 'queue', 'tree', 'graph']",,,
+student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q2,q2_definition,semantic,2.0,2.0,Fully Satisfied,True,STS Similarity: 0.875,,,0.8751
+student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q2,q2_characteristics,minimum_count,3.0,3.0,Fully Satisfied (Matched 5/4 required),True,"Matched 5/4 options: ['well-defined inputs', 'definiteness', 'finiteness', 'effectiveness', 'language independence']",,,
+student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q3,q3_definition,semantic,1.5,1.5,Fully Satisfied,True,STS Similarity: 0.851,,,0.8509
+student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q3,q3_time_complexity,semantic,1.5,1.5,Fully Satisfied,True,STS Similarity: 0.816,,,0.8161
+student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q3,q3_space_complexity,semantic,1.0,1.0,Fully Satisfied,True,STS Similarity: 0.920,,,0.9204
+student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q3,q3_cases,semantic,1.0,0.0,Missing / Low Similarity,False,STS Similarity: 0.397,,,0.3974
+student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q4,q4_array,semantic,2.5,2.5,Fully Satisfied,True,STS Similarity: 0.922,,,0.9222
+student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,Q4,q4_linked_list,semantic,2.5,1.91,Partially Satisfied,True,STS Similarity: 0.765,,,0.7654

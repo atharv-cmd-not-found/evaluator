@@ -2,3 +2,5 @@ student_id,evaluator_model,evaluator_type,marks_awarded,max_total_marks,percenta
 student1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,17.68,20.0,88.40%
 student_1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,16.96,20.0,84.80%
 student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,18.08,20.0,90.40%
+student_1,cross-encoder/stsb-roberta-large,CROSS_ENCODER,16.96,20.0,84.80%
+student_2,cross-encoder/stsb-roberta-large,CROSS_ENCODER,18.08,20.0,90.40%
