@@ -126,33 +126,5 @@ class CrossEncoderRubricEvaluator(BaseRubricEvaluator):
             evaluator_feedback=f"Evaluated using {self.model_name} ({self.model_type.upper()})"
         )
 
-
-'''class LLMRubricEvaluator(BaseRubricEvaluator):
-    """Evaluator supporting Open-Source LLMs (e.g., Qwen 2.5, Mistral, Phi-3.5 via Ollama)."""
-
-    def __init__(self, model_name: str = "qwen2.5:7b", endpoint: str = "http://localhost:11434/api/generate"):
-        print(f"Initializing LLM Evaluator '{model_name}'...")
-        self.model_name = model_name
-        self.evaluator_type = "LLM"
-        self.judge = LLMJudgeEvaluator(model_name=model_name, endpoint=endpoint)
-
-    def evaluate_question(
-        self,
-        question_id: str,
-        question_data: Dict[str, Any],
-        rubric_data: Dict[str, Any],
-        student_answer: str
-    ) -> QuestionEvaluationResult:
-        rubric = QuestionRubricSchema(**rubric_data)
-        return self.judge.evaluate_question(
-            question_id=question_id,
-            question_text=question_data.get("question", ""),
-            model_answer=question_data.get("model_answer", ""),
-            criteria=rubric.criteria,
-            max_marks=rubric.max_marks,
-            student_answer=student_answer
-        )
-'''
-
 # Backward-compatibility alias
 NLIRubricEvaluator = CrossEncoderRubricEvaluator

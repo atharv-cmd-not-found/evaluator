@@ -32,91 +32,11 @@ def evaluate_semantic_criterion(
     if len(student_sentences) == 1 and not isinstance(raw_predictions, (list, np.ndarray)):
         raw_predictions = [raw_predictions]
 
-    # -------------------------------------------------------------
-    # 1. Natural Language Inference (NLI) Cross-Encoders
-    # -------------------------------------------------------------
-    '''if model_type == "nli":
-        probs = F.softmax(torch.tensor(raw_predictions, dtype=torch.float32), dim=1)
-
-        # Find the sentence with the highest entailment probability
-        best_idx = torch.argmax(probs[:, label_entailment]).item()
-        best_probs = probs[best_idx]
-
-        ent_score = round(best_probs[label_entailment].item(), 4)
-        con_score = round(best_probs[label_contradiction].item(), 4)
-        neut_score = round(best_probs[2].item(), 4) if best_probs.shape[0] > 2 else 0.0
-
-        satisfied = False
-        if con_score > 0.60:
-            status = "Contradiction / Incorrect Statement"
-            awarded = 0.0
-        elif ent_score >= 0.85:
-            status = "Fully Satisfied"
-            awarded = criterion.marks
-            satisfied = True
-        elif ent_score >= criterion.entailment_threshold:
-            status = "Partially Satisfied"
-            scale = (ent_score - criterion.entailment_threshold) / (0.85 - criterion.entailment_threshold + 1e-8)
-            awarded = round(criterion.marks * (0.5 + 0.4 * scale), 2)
-            satisfied = True
-        else:
-            status = "Missing / Not Mentioned"
-            awarded = 0.0
-
-        diagnostics = f"Entail: {ent_score:.2f} | Contra: {con_score:.2f} | Neut: {neut_score:.2f}"
-
-        return CriterionEvaluationResult(
-            criterion_id=criterion.id,
-            description=criterion.description,
-            type=criterion.type,
-            max_marks=criterion.marks,
-            marks_awarded=awarded,
-            satisfied=satisfied,
-            status=status,
-            diagnostics=diagnostics,
-            entailment_score=ent_score,
-            contradiction_score=con_score,
-            neutral_score=neut_score,
-        )
-
-    # -------------------------------------------------------------
-    # 2. Passage Rerankers (e.g., MS-MARCO, BGE Reranker)
-    # -------------------------------------------------------------
-    elif model_type == "ranking":
-        logits = np.array(raw_predictions, dtype=float).flatten()
-        # Convert unbounded logits to sigmoid confidence [0.0, 1.0]
-        sigmoid_scores = 1.0 / (1.0 + np.exp(-logits))
-
-        best_idx = int(np.argmax(sigmoid_scores))
-        best_score = round(float(sigmoid_scores[best_idx]), 4)
-
-        satisfied = best_score >= 0.65
-        if best_score >= 0.80:
-            status = "Fully Satisfied"
-            awarded = criterion.marks
-        elif best_score >= 0.55:
-            status = "Partially Satisfied"
-            awarded = round(criterion.marks * best_score, 2)
-        else:
-            status = "Missing / Low Relevance"
-            awarded = 0.0
-
-        return CriterionEvaluationResult(
-            criterion_id=criterion.id,
-            description=criterion.description,
-            type=criterion.type,
-            max_marks=criterion.marks,
-            marks_awarded=awarded,
-            satisfied=satisfied,
-            status=status,
-            diagnostics=f"Sigmoid: {best_score:.3f} (Logit: {logits[best_idx]:.2f})",
-            semantic_similarity=best_score,
-        )
-
+   
     # -------------------------------------------------------------
     # 3. STS Cross-Encoders (e.g., stsb-roberta-large)
     # -------------------------------------------------------------
-    '''
+    
     scores = np.array(raw_predictions, dtype=float).flatten()
     best_idx = int(np.argmax(scores))
     best_score = round(float(np.clip(scores[best_idx], 0.0, 1.0)), 4)

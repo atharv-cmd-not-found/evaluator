@@ -12,7 +12,6 @@ from src.utils import load_json_file, save_json_file
 # -------------------------------------------------------------
 CROSS_ENCODER_CONFIGS = [
     
-    # 2. STS Models
     {
         "name": "cross-encoder/stsb-roberta-large",
         "type": "sts",
